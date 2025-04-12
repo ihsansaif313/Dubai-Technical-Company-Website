@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getContent } from '../constants/content'; // Assuming language context or default
-import { ArrowLeft } from 'lucide-react'; // Icon for back button
+import { galleryContent } from '../constants/galleryContent';
+import { ArrowLeft } from 'lucide-react';
 
 interface GalleryCategoryPageProps {
-  language: string; // Add language prop
+  language: string;
 }
 
-const GalleryCategoryPage: React.FC<GalleryCategoryPageProps> = ({ language }) => { // Destructure language prop
+const GalleryCategoryPage: React.FC<GalleryCategoryPageProps> = ({ language }) => {
   const { categoryId } = useParams<{ categoryId: string }>();
-  const { gallery } = getContent(language); // Use the passed language
+  const gallery = galleryContent[language] || galleryContent['en'];
 
   // Find the category based on the ID from the URL
   const category = gallery.categories.find((cat) => cat.id === categoryId);

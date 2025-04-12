@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getContent } from '../constants/content';
+import { galleryContent } from '../constants/galleryContent';
 
 interface GalleryPageProps {
   language: string;
 }
 
 const GalleryPage: React.FC<GalleryPageProps> = ({ language }) => {
-  const { gallery } = getContent(language);
+  const gallery = galleryContent[language] || galleryContent['en'];
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  
+   
   // Create category list with 'all' option
   const categories = [
     { id: 'all', title: language === 'en' ? 'All' : 'الكل' },
