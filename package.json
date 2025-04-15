@@ -1,9 +1,12 @@
 {
+  "homepage": "https://ihsansaif313.github.io/Far-Away-Travel-React",
   "name": "magic-patterns-vite-template",
   "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
