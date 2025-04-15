@@ -22,6 +22,7 @@ export function App() {
       <PortfolioSection language={language} />
       <TestimonialsSection language={language} />
       <ContactSection language={language} />
+      <Footer language={language} />
     </>;
   return <Router>
       <div className={`w-full min-h-screen ${language === 'ar' ? 'rtl' : 'ltr'}`}>
@@ -36,7 +37,6 @@ export function App() {
             <Route path="/gallery/:categoryId" element={<GalleryCategoryPage language={language} />} /> {/* Pass language prop */}
           </Routes>
         </main>
-        <Footer language={language} />
         <WhatsAppButton language={language} />
       </div>
     </Router>;
